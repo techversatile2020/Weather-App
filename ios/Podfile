@@ -61,7 +61,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'Lucid' do
+target 'WeatherApp' do
   config = use_native_modules!
   use_react_native!(
     :path => config[:reactNativePath],
@@ -78,7 +78,7 @@ target 'Lucid' do
 
 
 
-  target 'LucidTests' do
+  target 'WeatherAppTests' do
     inherit! :complete
     # Pods for testing
   end

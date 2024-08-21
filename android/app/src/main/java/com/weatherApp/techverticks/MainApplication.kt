@@ -1,4 +1,4 @@
-package com.lucid
+package com.weatherApp.techverticks
 
 import android.app.Application
 import com.facebook.react.PackageList
