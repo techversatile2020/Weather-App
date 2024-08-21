@@ -34,11 +34,7 @@ export const HomeScreen = ({}) => {
     city: city,
   });
 
-  const {
-    
-    isFetching: isFetchingCityForecast,
-   
-  } = useGetCityForecast({
+  const { isFetching: isFetchingCityForecast } = useGetCityForecast({
     enabled: !!selectedCity?.city,
     cityData: selectedCity,
   });
@@ -73,8 +69,6 @@ export const HomeScreen = ({}) => {
     setCity("");
   };
 
-  console.log("cityForecast=>", cityForecast);
-
   return (
     <ImageBackground source={Images.HomeGradient} style={{ flex: 1 }}>
       <MainContainer
@@ -93,9 +87,6 @@ export const HomeScreen = ({}) => {
             placeholder="Search City"
             isIcon
             iconImage={Images.FilledSearch}
-
-            // isPressableIcon
-            // onBtnPress={() => console.log("onBtnPress")}
           />
           <View
             style={{

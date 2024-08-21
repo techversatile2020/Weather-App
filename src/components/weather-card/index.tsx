@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.3,
     shadowRadius: 20,
-    elevation: 10, // 3D effect with shadow and elevation
+    elevation: 200, // 3D effect with shadow and elevation
   },
   icon: {
     width: SD.hp(100),

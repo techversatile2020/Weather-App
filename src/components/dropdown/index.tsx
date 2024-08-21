@@ -58,7 +58,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
           />
         ) : (
           <Text size={14} regular centered color={AppTheme.PrimaryTextColor}>
-            No City Found
+            City Not Found
           </Text>
         )
       }
