@@ -24,7 +24,7 @@ export const reduxStorage: Storage = {
 const persistConfig = {
   key: "root",
   storage: reduxStorage,
-  whitelist: ["auth"],
+  whitelist: ["home"],
   //   whitelist: ["theme", "auth",],
 };
 

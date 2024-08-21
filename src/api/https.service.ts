@@ -1,8 +1,6 @@
 import axios from "axios";
-import { API_TIMEOUT, BASE_PATH, BASE_URL } from "./config";
-import { store } from "../redux";
 import { toast } from "../utils/toast.utils";
-import { setAuthentication } from "../redux/reducers";
+import { API_TIMEOUT, BASE_PATH, BASE_URL } from "./config";
 
 const customAxios = (contentType = "application/json") => {
   console.log(`=>>>>>>>>>>>Base Url${BASE_URL}${BASE_PATH}`);
@@ -15,17 +13,7 @@ const customAxios = (contentType = "application/json") => {
   // Request interceptor
   instance.interceptors.request.use(
     async (config: any) => {
-      const token = store.getState().auth.token;
-
-      if (token) {
-        config.headers = {
-          ...config.headers,
-          Authorization: `Bearer ${token}`,
-        };
-      }
-
       console.log("Request URL:", config.url);
-      console.log("Request token:", token);
 
       return config;
     },
@@ -60,7 +48,6 @@ const customAxios = (contentType = "application/json") => {
         if (status === 401) {
           // Perform logout logic here
           console.log("Unauthorized. Logging out...");
-          store.dispatch(setAuthentication(false));
           toast.fail("Session Expired. Logging out...");
         } else if (status === 404 || status === 400) {
           console.log("Resource not found", error?.response?.data?.error);

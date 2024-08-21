@@ -84,13 +84,6 @@ PODS:
   - JWT (3.0.0-beta.12):
     - Base64 (~> 1.1.2)
   - libevent (2.1.12)
-  - MapboxCommon (24.0.0)
-  - MapboxCoreMaps (11.0.0):
-    - MapboxCommon (~> 24.0)
-  - MapboxMaps (11.0.0):
-    - MapboxCommon (= 24.0.0)
-    - MapboxCoreMaps (= 11.0.0)
-    - Turf (= 2.7.0)
   - MMKV (1.3.5):
     - MMKVCore (~> 1.3.5)
   - MMKVCore (1.3.5)
@@ -1184,17 +1177,6 @@ PODS:
     - React-Core
   - RNKeychain (8.2.0):
     - React-Core
-  - rnmapbox-maps (10.1.28):
-    - MapboxMaps (= 11.0.0)
-    - React
-    - React-Core
-    - rnmapbox-maps/DynamicLibrary (= 10.1.28)
-    - Turf
-  - rnmapbox-maps/DynamicLibrary (10.1.28):
-    - MapboxMaps (= 11.0.0)
-    - React
-    - React-Core
-    - Turf
   - RNPermissions (4.1.5):
     - React-Core
   - RNReanimated (3.15.0):
@@ -1224,7 +1206,6 @@ PODS:
   - RNSVG (15.5.0):
     - React-Core
   - SocketRocket (0.6.1)
-  - Turf (2.7.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -1318,7 +1299,6 @@ DEPENDENCIES:
   - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
-  - "rnmapbox-maps (from `../node_modules/@rnmapbox/maps`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -1344,14 +1324,10 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - JWT
     - libevent
-    - MapboxCommon
-    - MapboxCoreMaps
-    - MapboxMaps
     - MMKV
     - MMKVCore
     - OpenSSL-Universal
     - SocketRocket
-    - Turf
 
 EXTERNAL SOURCES:
   boost:
@@ -1485,8 +1461,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNKeychain:
     :path: "../node_modules/react-native-keychain"
-  rnmapbox-maps:
-    :path: "../node_modules/@rnmapbox/maps"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
@@ -1524,9 +1498,6 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   JWT: 9b5c05abbcc1a0e69c3c91e1655b3387fc7e581d
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  MapboxCommon: 0cca816960ad2d21c86e1d32435fcb412cfdcf4f
-  MapboxCoreMaps: 633f5ecd7580a6d1342ff20cc8732170b2cd7ba3
-  MapboxMaps: 1c219108691a2000cb842b02e64d82158d74e6cd
   MMKV: 506311d0494023c2f7e0b62cc1f31b7370fa3cfb
   MMKVCore: 9e2e5fd529b64a9fe15f1a7afb3d73b2e27b4db9
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
@@ -1588,16 +1559,14 @@ SPEC CHECKSUMS:
   RNDateTimePicker: 40ffda97d071a98a10fdca4fa97e3977102ccd14
   RNGestureHandler: 1155b1898ceddefeebf77792927360d44fe11e77
   RNKeychain: bfe3d12bf4620fe488771c414530bf16e88f3678
-  rnmapbox-maps: c0ad75e055581ae4713fb630d107aea6181c9fd5
   RNPermissions: 44d8f2d97073f25bc6a0e184ab47bf6ee5549152
   RNReanimated: ba95f6d26ca4b8a8f7f2b15f62a3513750762f6b
   RNScreens: 29418ceffb585b8f0ebd363de304288c3dce8323
   RNSnackbar: 3727b42bf6c4314a53c18185b5203e915a4ab020
   RNSVG: b986585e367f4a49d8aa43065066cc9c290b3d9b
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  Turf: 13d1a92d969ca0311bbc26e8356cca178ce95da2
   Yoga: d17d2cc8105eed528474683b42e2ea310e1daf61
 
-PODFILE CHECKSUM: 1c84118ad0818cfe67cf01ebf9034ecebe51ea6f
+PODFILE CHECKSUM: d370e1ed5e12328543d8d3312057faa649c782ad
 
 COCOAPODS: 1.14.3

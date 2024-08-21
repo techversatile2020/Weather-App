@@ -10,7 +10,7 @@ export const initialState: HomeStateType = {
 };
 
 const homeSlice = createSlice({
-  name: "auth",
+  name: "home",
   initialState,
   reducers: {
     setCityForecastData: (

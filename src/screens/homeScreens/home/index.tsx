@@ -15,7 +15,12 @@ import { LocationCities } from "../../../models";
 import { CommonUtils } from "../../../utils";
 import WeatherCard from "../../../components/weather-card";
 
-export const HomeScreen = ({}) => {
+/**
+ * Home screen component
+ *
+ * @returns Home screen component
+ */
+export const HomeScreen = () => {
   const { AppTheme } = useTheme();
   const queryClient = useQueryClient();
   const cityForecast = useTypedSelector((state) => state.home.cityForecastData);
@@ -25,6 +30,9 @@ export const HomeScreen = ({}) => {
     city: string;
   }>({ id: 0, city: "Dallas" });
 
+  /**
+   * Fetch cities list based on the input search
+   */
   const {
     data: citiesList,
     isFetching: isFetchingCitiesList,
@@ -34,25 +42,36 @@ export const HomeScreen = ({}) => {
     city: city,
   });
 
+  /**
+   * Fetch city forecast based on the selected city
+   */
   const { isFetching: isFetchingCityForecast } = useGetCityForecast({
     enabled: !!selectedCity?.city,
     cityData: selectedCity,
   });
 
-  // Create a debounced function
+  /**
+   * Create a debounced function to avoid multiple search requests
+   */
   const debouncedSearch = useCallback(
     () => CommonUtils.debouncedFunction(refetchCitiesList),
     []
   );
 
-  // Cleanup on unmount
+  /**
+   * Cleanup on unmount
+   */
   useEffect(() => {
     return () => {
       CommonUtils.debouncedFunction.cancel();
     };
   }, [debouncedSearch]);
 
-  // Handle input change
+  /**
+   * Handle input change
+   *
+   * @param text - input text
+   */
   const handleInputChange = (text: string) => {
     setCity(text);
     if (text.length > 2) {
@@ -62,6 +81,11 @@ export const HomeScreen = ({}) => {
     }
   };
 
+  /**
+   * Handle show forecast
+   *
+   * @param item - selected city
+   */
   const handleShowForecast = (item: LocationCities) => {
     console.log("handleShowForecast=>", item);
     Keyboard.dismiss();

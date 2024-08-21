@@ -1,4 +1,4 @@
-package com.weatherApp
+package com.lucid
 import android.os.Bundle;
 import org.devio.rn.splashscreen.SplashScreen; // here
 import com.facebook.react.ReactActivity
