@@ -10,12 +10,6 @@ import { name as appName } from "./app.json";
 import QueryProvider from "./src/queryClient";
 import { persistor, store } from "./src/redux";
 
-// import configureStore from './src/redux/Store';
-// import DataHandler from './src/services/dataHandler.service';
-
-// const {runSaga, store, persistor} = configureStore();
-// DataHandler.setStore(store);
-
 class AppView extends Component {
   render() {
     return (
