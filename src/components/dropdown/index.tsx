@@ -43,7 +43,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
             }}
           >
             <Text size={14} regular color={AppTheme.PrimaryTextColor}>
-              {`${item?.name}, ${item.country}`}
+              {`${item?.name},  ${item.country}`}
             </Text>
           </View>
         </CustomTouchable>

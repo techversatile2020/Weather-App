@@ -33,7 +33,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ data }) => {
         {`${temperature}°C`}
       </Text>
       <Text regular centered size={24} bottomSpacing={10}>
-        {location?.name},{location?.region}
+        {location?.name}, {location?.region}
         {`\n`}
         {location?.country}
       </Text>
