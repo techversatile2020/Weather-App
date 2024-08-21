@@ -1,4 +1,3 @@
-// export const BASE_URL: string = "http://192.168.100.75:3100/";
 import { BASE_API_URL } from "@env";
 
 export const BASE_URL: string = BASE_API_URL;
