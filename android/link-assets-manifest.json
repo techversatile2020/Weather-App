@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/OverusedGrotesk-Bold.ttf",
+      "sha1": "68696b6dfeacc387e0dfa9c356c64ee2ee56b038"
+    },
+    {
+      "path": "src/assets/fonts/OverusedGrotesk-Book.ttf",
+      "sha1": "82e367eff09867e13affc090c10225f440026a19"
+    },
+    {
+      "path": "src/assets/fonts/OverusedGrotesk-Medium.ttf",
+      "sha1": "2ff2e8a0cb4b08ec7b1922f3724785c449cbacb1"
+    },
+    {
+      "path": "src/assets/fonts/OverusedGrotesk-Roman.ttf",
+      "sha1": "970874611ad7c8bc4476b7fe0efbb654a24e4253"
+    },
+    {
+      "path": "src/assets/fonts/OverusedGrotesk-SemiBold.ttf",
+      "sha1": "736d60eb1ed41256fba5d44593883772fc8fa96c"
+    }
+  ]
+}
