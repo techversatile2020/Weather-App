@@ -101,7 +101,7 @@ const openMaps = (latitude: number, longitude: number) => {
 
 const debouncedFunction = _.debounce((callback) => {
   callback(); // Call your function here
-}, 700); // Adjust the debounce delay (in milliseconds) as needed
+}, 300); // Adjust the debounce delay (in milliseconds) as needed
 
 const generateFilledArray = (length: number): number[] => {
   return new Array(length).fill(1);

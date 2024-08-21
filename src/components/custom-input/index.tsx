@@ -2,7 +2,6 @@ import React, { FC, Ref, useState } from "react";
 import {
   Image,
   ImageProps,
-  ScrollView,
   StyleSheet,
   TextInput,
   TextInputProps,
@@ -16,19 +15,6 @@ import { Fonts } from "../../styles";
 import { SD } from "../../utils";
 import Text from "../text";
 
-export const MyDropDownContent: React.FC<{ text?: string }> = ({ text }) => (
-  <View
-    style={{
-      // borderWidth: 1,
-      paddingHorizontal: SD.wp(10),
-      marginTop: SD.hp(10),
-    }}
-  >
-    <Text size={14} regular>
-      {text}
-    </Text>
-  </View>
-);
 
 export type CustomInputProps = TextInputProps & {
   customStyle?: TextInputProps["style"];
@@ -72,8 +58,6 @@ export const CustomInput: FC<CustomInputProps> = ({
   onBlur,
   focusBorderColor,
   isSecondary,
-  isDropdown,
-  dropdownContent,
   editable = true,
   ...rest
 }) => {
@@ -90,23 +74,13 @@ export const CustomInput: FC<CustomInputProps> = ({
 
             // borderRadius:SD.hp(10),
           },
-          isDropdown && {
-            marginVertical: SD.hp(0),
-            marginTop: SD.hp(10),
-          },
-          isDropdown &&
-            dropdownContent?.length > 0 && {
-              borderBottomEndRadius: 0,
-              borderBottomStartRadius: 0,
-              borderColor: 0,
-              borderBottomWidth: 1,
-              borderBottomColor: AppTheme.TextInputBorderColorFocused,
-            },
           containerStyle,
         ]}
       >
         <TextInput
-          onPressIn={() => !editable && isPressableIcon && onBtnPress && onBtnPress()}
+          onPressIn={() =>
+            !editable && isPressableIcon && onBtnPress && onBtnPress()
+          }
           onFocus={() => setIsFocused(true)}
           onBlur={() => {
             if (onBlur) onBlur();
@@ -151,6 +125,7 @@ export const CustomInput: FC<CustomInputProps> = ({
         {isIcon && (
           <TouchableOpacity
             activeOpacity={0.6}
+            disabled={!isPressableIcon}
             style={[styles.eyeStyle(AppTheme), iconStyle]}
             onPress={() => isPressableIcon && onBtnPress && onBtnPress()}
           >
@@ -165,23 +140,7 @@ export const CustomInput: FC<CustomInputProps> = ({
           </TouchableOpacity>
         )}
       </View>
-      {isDropdown && dropdownContent?.length > 0 && (
-        <View
-          style={{
-            maxHeight: SD.hp(200),
-            paddingBottom: SD.hp(10),
-            borderBottomEndRadius: SD.hp(10),
-            borderBottomStartRadius: SD.hp(10),
-            backgroundColor: AppTheme.TextInputSecondaryBaseColor,
-          }}
-        >
-          <ScrollView showsVerticalScrollIndicator={false}>
-            {dropdownContent?.map((text, index) => (
-              <MyDropDownContent text={text} key={`${text}${index}`} />
-            ))}
-          </ScrollView>
-        </View>
-      )}
+
       {touched && error && <Text color={AppTheme.ErrorTextColor}>{error}</Text>}
     </>
   );

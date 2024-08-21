@@ -10,10 +10,12 @@ import { RoundImageContainer } from "./round-image-container";
 import { CustomDatePicker } from "./custom-date-picker";
 import { Loader } from "./loader";
 import { EmptyState } from "./empty-state";
+import { Dropdown } from "./dropdown";
 export {
   Text,
   CardContainer,
   CustomInput,
+  Dropdown,
   MainContainer,
   ToucableFeedback,
   CustomImage,

@@ -7,13 +7,18 @@ import authSlice, {
   setUser,
   updateUser,
 } from "./auth.slice";
-// import themeSlice, { setTheme } from "./theme.slice";
+import homeSlice, { setCityForecastData } from "./home.slice";
 
 export const rootReducer = combineReducers({
-//   theme: themeSlice,
+  //   theme: themeSlice,
   auth: authSlice,
+  home: homeSlice,
 });
 
 // export { setTheme };
 
+// Auth
 export { logout, setAuthentication, setToken, setUser, updateUser };
+
+// Home
+export { setCityForecastData };

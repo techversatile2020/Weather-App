@@ -8,7 +8,6 @@ const customAxios = (contentType = "application/json") => {
   console.log(`=>>>>>>>>>>>Base Url${BASE_URL}${BASE_PATH}`);
   const instance = axios.create({
     baseURL: `${BASE_URL}${BASE_PATH}`,
-    // baseURL: `https://backend.sellersroute.com/api/v1/`,
     headers: { "Content-Type": contentType },
     timeout: API_TIMEOUT,
   });
@@ -52,19 +51,8 @@ const customAxios = (contentType = "application/json") => {
     },
     (error) => {
       console.error("Response Error:", error, error?.response?.data);
-      const errorsTypes =
-        error?.response?.data?.error ||
-        error?.response?.data?.message ||
-        error?.response?.data?.msg ||
-        error?.response?.error ||
-        "Something went wrong. Please try again later.";
-      // toast.fail(
-      //   error?.response?.data?.error ||
-      //     error?.response?.data?.message ||
-      //     error?.response?.data?.msg ||
-      //     error?.response?.error ||
-      //     "Something went wrong. Please try again later."
-      // );
+      const errorsTypes = error?.response?.data?.error?.message;
+      error?.response?.error || "Something went wrong. Please try again later.";
 
       if (error.response) {
         const { status } = error.response;
@@ -76,16 +64,9 @@ const customAxios = (contentType = "application/json") => {
           toast.fail("Session Expired. Logging out...");
         } else if (status === 404 || status === 400) {
           console.log("Resource not found", error?.response?.data?.error);
-          if (
-            !errorsTypes?.includes(
-              "No persons found for this UserId" && "Person not found"
-            )
-          ) {
-            toast.fail(errorsTypes);
-          }
+
+          toast.fail(errorsTypes);
         }
-      } else if (error.request) {
-        // console.error("No response received:", error.request);
       } else {
         console.error("Error setting up the request:", error.message);
       }
